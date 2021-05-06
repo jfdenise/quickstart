@@ -1,0 +1,8 @@
+embed-server --std-out=echo  --server-config=standalone-openshift.xml
+
+# Enable a default JACC policy with WildFly Elytron
+/subsystem=elytron/policy=jacc:add(jacc-policy={})
+# Update 'other' Elytron security domain to disabled integrated jaspi
+/subsystem=undertow/application-security-domain=other:write-attribute(name=integrated-jaspi, value=false)
+
+quit
