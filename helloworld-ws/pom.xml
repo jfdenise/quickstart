@@ -196,7 +196,7 @@
                             <galleon-options>
                                 <jboss-fork-embedded>true</jboss-fork-embedded>
                             </galleon-options>
-                            <filename>ROOT.war</filename>
+                            <filename>${project.artifactId}.war</filename>
                         </configuration>
                         <executions>
                             <execution>
