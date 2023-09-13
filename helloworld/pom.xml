@@ -44,9 +44,9 @@
 
     <properties>
         <!-- The versions for BOMs, Dependencies and Plugins -->
-        <version.server.bom>28.0.1.Final</version.server.bom>
-        <version.server>29.0.0.Final</version.server>
-        <version.wildfly.maven.plugin>4.2.1.Final-SNAPSHOT</version.wildfly.maven.plugin>
+        <version.server.bom>29.0.1.Final</version.server.bom>
+        <version.server>29.0.1.Final</version.server>
+        <version.wildfly.maven.plugin>5.0.0.Alpha2</version.wildfly.maven.plugin>
     </properties>
 
     <repositories>
@@ -186,9 +186,7 @@
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <version>${version.wildfly.maven.plugin}</version>
                         <configuration>
-                            <discover-provisioning-info>
-                                <version>${version.server}</version>
-                            </discover-provisioning-info>
+                            <discover-provisioning-info/>
                             <!-- deploys the quickstart on root web context -->
                             <runtimeName>ROOT.war</runtimeName>
                         </configuration>
@@ -233,7 +231,6 @@
                         <version>${version.wildfly.maven.plugin}</version>
                         <configuration>
                             <discover-provisioning-info>
-                                <version>${version.server}</version>
                                 <context>cloud</context>
                             </discover-provisioning-info>
                             <filename>ROOT.war</filename>
