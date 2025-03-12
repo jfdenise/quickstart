@@ -139,6 +139,9 @@
                                 <failsOnError>false</failsOnError>
                                 <add-ons>
                                     <add-on>h2-database</add-on>
+                                    <add-on>metrics</add-on>
+                                    <add-on>health</add-on>
+                                    <add-on>wildfly-cli</add-on>
                                 </add-ons>
                             </discover-provisioning-info>
                             <packaging-scripts>
