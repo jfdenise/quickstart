@@ -3,6 +3,12 @@
 The jboss-web.xml contains a security domain that is wrongly named. AI LLM should be abe to help 
 identify this issue.
 
+## Clone the repository
+
+* `git clone -b mcp-demo-march-2025 git@github.com:jfdenise/quickstart`
+
+* `cd quickstart/servlet-security`
+
 ## Start the WildFly server
 
 * In a terminal, build and start the server: `sh ./start-demo.sh`
