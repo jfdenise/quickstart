@@ -9,10 +9,10 @@ batch
 /subsystem=elytron/jdbc-realm=servlet-security-jdbc-realm:add(principal-query=[{sql="SELECT PASSWORD FROM USERS WHERE USERNAME = ?", data-source="ServletSecurityDS", clear-password-mapper={password-index=1}},{sql="SELECT R.NAME, 'Roles' FROM USERS_ROLES UR INNER JOIN ROLES R ON R.ID = UR.ROLE_ID INNER JOIN USERS U ON U.ID = UR.USER_ID WHERE U.USERNAME = ?", data-source="ServletSecurityDS", attribute-mapping=[{index=1, to=Roles}]}])
 
 # Configure the servlet-security-quickstart security domain
-/subsystem=elytron/security-domain=test-qs-sd:add(default-realm=servlet-security-jdbc-realm, realms=[{realm=servlet-security-jdbc-realm}], permission-mapper=default-permission-mapper)
+/subsystem=elytron/security-domain=sec-domain-jdbc:add(default-realm=servlet-security-jdbc-realm, realms=[{realm=servlet-security-jdbc-realm}], permission-mapper=default-permission-mapper)
 
 # Configure Undertow's application security domain
-/subsystem=undertow/application-security-domain=test-sd:add(security-domain=test-qs-sd)
+/subsystem=undertow/application-security-domain=test-sd:add(security-domain=sec-domain-jdbc)
 
 # Run the batch commands
 run-batch
